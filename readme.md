@@ -10,25 +10,25 @@ I also had the opportunity to visit some greenspaces and understand the history 
 Three Data Questions
 —————
 # 1. How many blocks cannot be planted?
-# cannot_plant = sum(1 for row in blocks if row["DoNotPlant"] == "1")
-# print("Cannot be planted:", cannot_plant)
+  cannot_plant = sum(1 for row in blocks if row["DoNotPlant"] == "1")
+  print("Cannot be planted:", cannot_plant)
 
 "cannot be planted" maps onto the column titled "DoNotPlant", which is kept using numbers to represent yes or no
 
 
 # 2. How many blocks have been surveyed?
-# surveyed = sum(1 for row in blocks if row["BlkSurv"] == "1")
-# print("Surveyed:", surveyed)
+  surveyed = sum(1 for row in blocks if row["BlkSurv"] == "1")
+  print("Surveyed:", surveyed)
 
 BlkSurv similarly maps onto this question, except it counts whenever a block has "1" in this column, meaning that it has been surveyed.
 
 
 # 3. How many blocks were planted in Spring 2009?
-# spring09_planted = sum(
-#     1 for row in blocks
-#     if row["PlntSeas"] == "Spring09" and row["BlkPlnt"] == "1"
-# )
-# print("Planted in Spring09:", spring09_planted)
+  spring09_planted = sum(
+      1 for row in blocks
+      if row["PlntSeas"] == "Spring09" and row["BlkPlnt"] == "1"
+  )
+  print("Planted in Spring09:", spring09_planted)
 
 In the PlntSeas column, the date is mapped as "SeasonYear", so all that the code needed to do was count everytime there was an instance of Spring09.
 
